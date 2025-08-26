@@ -99,65 +99,79 @@ select{
 </head>
 <body>
  <div class="content">
-     <center>
-<form method="post" action="" name="form" id="form">
+   <center>
+<form method="post" name="form" id="form">
     
  <h1>Registration Form</h1>
- 
  <p style="font-size: 10px;">Muhammad Gulab</p>
 
  <label>Full Name</label>
  <input type="text" name="Full Name" placeholder="Enter Your Full Name" required>
 
-<label>Roll Number</label>
-<input type="tel" name="Roll Number" placeholder="Enter Your Roll Number" required>
+ <label>Roll Number</label>
+ <input type="tel" name="Roll Number" placeholder="Enter Your Roll Number" required>
 
  <label>Class / Grade</label>
-    <select class="ad" name="Class / Grade" required>
-      <option value="option">--Select--</option>
-      <option>6th</option>
-      <option>7th</option>
-      <option>8th</option>
-      <option>9th</option>
-      <option>10th</option>
-      <option>11th</option>
-      <option>12th</option>
-      <option>Graduation</option>
-    </select>
+ <select class="ad" name="Class / Grade" required>
+   <option value="">--Select--</option>
+   <option>6th</option>
+   <option>7th</option>
+   <option>8th</option>
+   <option>9th</option>
+   <option>10th</option>
+   <option>11th</option>
+   <option>12th</option>
+   <option>Graduation</option>
+ </select>
 
  <label>Test Subject</label>
-  <select class="ad" name="Test Subject" required>
-     <option value="">--Select--</option>
-      <option>Mathematics</option>
-      <option>Science</option>
-      <option>English</option>
-      <option>Computer</option>
-   </select>
+ <select class="ad" name="Test Subject" required>
+   <option value="">--Select--</option>
+   <option>Mathematics</option>
+   <option>Science</option>
+   <option>English</option>
+   <option>Computer</option>
+ </select>
 
  <label>Email Address</label>
  <input type="email" name="Email Address" placeholder="Enter Your Email Address" required>
 
  <label>Phone Number</label>
- <input type="tel" name="Phone Number" id="" cols="30" rows="10" placeholder=" Enter Your Phone Number" required></input>
+ <input type="tel" name="Phone Number" placeholder="Enter Your Phone Number" required>
 
- <button class="click">Submit &#10132;</button>
+ <button type="submit" class="click">Submit &#10132</button>
 
- <p style=" font-size: 10px; color: rgb(33, 33, 33); margin: 6px;">Muhammad Gulab</p>
-
+ <p style="font-size: 10px; color: rgb(33, 33, 33); margin: 6px;">Muhammad Gulab</p>
 </form>
 </center>
 </div>
+
 <script>
-const scriptURL ="https://script.google.com/macros/s/AKfycbzWLduz03t3d8fW3dNV0wPjST_gNDlQK-Hp6sNfMAvnvudu7_f07PiGujws8XiEFSs1gg/exec";
+const scriptURL = "https://script.google.com/macros/s/AKfycbzWLduz03t3d8fW3dNV0wPjST_gNDlQK-Hp6sNfMAvnvudu7_f07PiGujws8XiEFSs1gg/exec"; // replace with your deployed script URL
 const form = document.forms['form'];
+const submitBtn = document.querySelector(".click");
 
 form.addEventListener('submit', e => {
-e.preventDefault();
-fetch(scriptURL, { method: 'POST', body: new FormData(form) })
-.then(response => alert("Thank you! your form is submitted successfully."))
-.then(() => { window.location.reload(); })
-.catch(error => console.error('Error!', error.message));
+  e.preventDefault();
+
+  // Show instant feedback
+  submitBtn.disabled = true;
+  submitBtn.innerText = "Submitting...";
+
+  fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+    .then(response => {
+       alert("Thank you! Your form is submitted successfully.");
+       form.reset(); // clear form instantly
+    })
+    .catch(error => {
+       alert("Error! Something went wrong.");
+       console.error('Error!', error.message);
+    })
+    .finally(() => {
+       submitBtn.disabled = false;
+       submitBtn.innerText = "Submit ➝";
+    });
 });
 </script>     
-<br>
 </body>
+</html>
