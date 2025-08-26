@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Own Web</title>
+<style>
+*{
+margin: 0;
+padding: 0;
+font-family: Arial, Helvetica, sans-sarif;
+}
+
+body{
+background-color: rgb(5, 134, 5);
+}
+
+.content{
+    text-align: ;
+    display: ;
+    position: relative0;
+}
+
+form{
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    overflow: hidden;
+    background-color: #eeeeee;
+    padding: 20px 30px;
+    overflow: hidden;
+    width: 345px;
+    border-radius: 15px;
+    top: 10px;
+    border: 1px solid rgb(141, 141, 141);
+}
+
+h1{
+   color:green;
+}
+
+label{
+    left: -10px;
+    text-align: left;
+    margin: 10px;
+    position: relative;    
+    color: rgb(5, 134, 5);
+    font-weight: bold;
+    margin-bottom: 5px;
+    font-family:Trebuchet MS, Helvetica, sans-serif ;
+}
+
+input{
+    padding: 10px 15px;
+    width: 320px;
+    margin-bottom: 0px;
+    border-radius: 6px;
+    border: 1px solid rgb(119, 119, 119);
+    display: flex;
+    position: relative;
+}
+select{
+    padding: 10px 15px;
+    width: 350px;
+    margin-bottom: 0px;
+    border-radius: 6px;
+    border: 1px solid rgb(119, 119, 119);
+    display: flex;
+    position: relative;
+}
+
+.ad{
+    background-color: white;
+}
+.click{
+    margin: 10px;
+    background-color: rgb(4, 162, 4);
+    color: #fff;
+    border: none;
+    font-size: 15px;
+    font-weight: bold;
+    padding: 10px 20px;
+    border-radius: 6px;
+    margin: 5px;
+    width: 346px;
+    cursor: pointer;
+    margin-left: 0px;
+    margin-top: 20px;
+}
+
+.click:hover{
+    background-color: rgb(5, 134, 5);
+}
+
+.line{
+    font-size: 10px;
+    color: rgb(33, 33, 33);
+    margin: 6px;
+}
+</style>
+</head>
+<body>
+ <div class="content">
+     <center>
+<form method="post" action="" name="form" id="form">
+    
+ <h1>Registration Form</h1>
+ 
+ <p style="font-size: 10px;">Muhammad Gulab</p>
+
+ <label>Full Name</label>
+ <input type="text" name="Full Name" placeholder="Enter Your Full Name" required>
+
+<label>Roll Number</label>
+<input type="tel" name="Roll Number" placeholder="Enter Your Roll Number" required>
+
+ <label>Class / Grade</label>
+    <select class="ad" name="Class / Grade" required>
+      <option value="option">--Select--</option>
+      <option>6th</option>
+      <option>7th</option>
+      <option>8th</option>
+      <option>9th</option>
+      <option>10th</option>
+      <option>11th</option>
+      <option>12th</option>
+      <option>Graduation</option>
+    </select>
+
+ <label>Test Subject</label>
+  <select class="ad" name="Test Subject" required>
+     <option value="">--Select--</option>
+      <option>Mathematics</option>
+      <option>Science</option>
+      <option>English</option>
+      <option>Computer</option>
+   </select>
+
+ <label>Email Address</label>
+ <input type="email" name="Email Address" placeholder="Enter Your Email Address" required>
+
+ <label>Phone Number</label>
+ <input type="tel" name="Phone Number" id="" cols="30" rows="10" placeholder=" Enter Your Phone Number" required></input>
+
+ <button class="click">Submit &#10132;</button>
+
+ <p style=" font-size: 10px; color: rgb(33, 33, 33); margin: 6px;">Muhammad Gulab</p>
+
+</form>
+</center>
+</div>
+<script>
+const scriptURL ="https://script.google.com/macros/s/AKfycbzWLduz03t3d8fW3dNV0wPjST_gNDlQK-Hp6sNfMAvnvudu7_f07PiGujws8XiEFSs1gg/exec";
+const form = document.forms['form'];
+
+form.addEventListener('submit', e => {
+e.preventDefault();
+fetch(scriptURL, { method: 'POST', body: new FormData(form) })
+.then(response => alert("Thank you! your form is submitted successfully."))
+.then(() => { window.location.reload(); })
+.catch(error => console.error('Error!', error.message));
+});
+</script>     
+<br>
+</body>
