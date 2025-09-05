@@ -1,177 +1,338 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<title>Own Web</title>
-<style>
-*{
-margin: 0;
-padding: 0;
-font-family: Arial, Helvetica, sans-sarif;
-}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Antique Registration Form</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Cormorant+Garamond:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-body{
-background-color: rgb(5, 134, 5);
-}
+        body {
+            background: #8B4513 url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><rect fill="%23693f15" width="100" height="100"/><path fill="%23a57c4a" opacity="0.2" d="M0 0h100v100H0z"/></svg>');
+            font-family: 'Cormorant Garamond', serif;
+            color: #3E2723;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
 
-.content{
-    text-align: ;
-    display: ;
-    position: relative0;
-}
+        .content {
+            position: relative;
+            max-width: 500px;
+            width: 100%;
+        }
 
-form{
-    display: flex;
-    flex-direction: column;
-    position: relative;
-    overflow: hidden;
-    background-color: #eeeeee;
-    padding: 20px 30px;
-    overflow: hidden;
-    width: 345px;
-    border-radius: 15px;
-    top: 10px;
-    border: 1px solid rgb(141, 141, 141);
-}
+        .parchment {
+            background: #F5E5C0 url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="200" height="200" viewBox="0 0 200 200"><rect fill="%23d6bc8f" width="200" height="200"/><path fill="%23e9d6ac" opacity="0.4" d="M0 0h200v200H0z"/></svg>');
+            padding: 40px 30px;
+            border-radius: 15px;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5), inset 0 0 100px rgba(139, 69, 19, 0.4);
+            border: 15px solid #8B4513;
+            position: relative;
+        }
 
-h1{
-   color:green;
-}
+        .parchment::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(rgba(139, 69, 19, 0.1) 1px, transparent 1px),
+                        linear-gradient(90deg, rgba(139, 69, 19, 0.1) 1px, transparent 1px);
+            background-size: 20px 20px;
+            pointer-events: none;
+        }
 
-label{
-    left: -10px;
-    text-align: left;
-    margin: 10px;
-    position: relative;    
-    color: rgb(5, 134, 5);
-    font-weight: bold;
-    margin-bottom: 5px;
-    font-family:Trebuchet MS, Helvetica, sans-serif ;
-}
+        .header {
+            text-align: center;
+            margin-bottom: 25px;
+            position: relative;
+        }
 
-input{
-    padding: 10px 15px;
-    width: 320px;
-    margin-bottom: 0px;
-    border-radius: 6px;
-    border: 1px solid rgb(119, 119, 119);
-    display: flex;
-    position: relative;
-}
-select{
-    padding: 10px 15px;
-    width: 350px;
-    margin-bottom: 0px;
-    border-radius: 6px;
-    border: 1px solid rgb(119, 119, 119);
-    display: flex;
-    position: relative;
-}
+        .header h1 {
+            font-family: 'Cinzel', serif;
+            font-size: 2.5rem;
+            color: #5D4037;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+            margin-bottom: 5px;
+        }
 
-.ad{
-    background-color: white;
-}
-.click{
-    margin: 10px;
-    background-color: rgb(4, 162, 4);
-    color: #fff;
-    border: none;
-    font-size: 15px;
-    font-weight: bold;
-    padding: 10px 20px;
-    border-radius: 6px;
-    margin: 5px;
-    width: 346px;
-    cursor: pointer;
-    margin-left: 0px;
-    margin-top: 20px;
-}
+        .header p {
+            font-style: italic;
+            color: #5D4037;
+            font-size: 1rem;
+        }
 
-.click:hover{
-    background-color: rgb(5, 134, 5);
-}
+        form {
+            display: flex;
+            flex-direction: column;
+        }
 
-.line{
-    font-size: 10px;
-    color: rgb(33, 33, 33);
-    margin: 6px;
-}
-</style>
+        .form-group {
+            margin-bottom: 20px;
+            position: relative;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: #3E2723;
+            font-family: 'Cinzel', serif;
+            font-size: 1.1rem;
+        }
+
+        input, select {
+            width: 100%;
+            padding: 12px 15px;
+            border: 2px solid #8B4513;
+            border-radius: 8px;
+            background: rgba(245, 229, 192, 0.9);
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.1rem;
+            color: #3E2723;
+            box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s;
+        }
+
+        input:focus, select:focus {
+            outline: none;
+            border-color: #5D4037;
+            box-shadow: 0 0 0 3px rgba(139, 69, 19, 0.3);
+        }
+
+        .click {
+            background: linear-gradient(to bottom, #8B4513, #6D4C41);
+            color: #F5E5C0;
+            border: none;
+            font-size: 1.2rem;
+            font-weight: bold;
+            padding: 12px 20px;
+            border-radius: 8px;
+            width: 100%;
+            cursor: pointer;
+            margin-top: 20px;
+            font-family: 'Cinzel', serif;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            position: relative;
+            overflow: hidden;
+            transition: all 0.3s;
+        }
+
+        .click:hover {
+            background: linear-gradient(to bottom, #6D4C41, #8B4513);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
+        }
+
+        .click::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transition: 0.5s;
+        }
+
+        .click:hover::after {
+            left: 100%;
+        }
+
+        .footer {
+            text-align: center;
+            margin-top: 15px;
+            font-size: 0.9rem;
+            color: #5D4037;
+            font-style: italic;
+        }
+
+        .wax-seal {
+            position: absolute;
+            bottom: -25px;
+            right: -25px;
+            width: 70px;
+            height: 70px;
+            background: radial-gradient(circle at 30% 30%, #c23b22, #8B0000);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #F5E5C0;
+            box-shadow: 0 0 20px rgba(194, 59, 34, 0.7);
+            z-index: 10;
+            font-family: 'Cinzel', serif;
+            font-size: 12px;
+            text-align: center;
+            border: 3px solid #a52a2a;
+            transform: rotate(10deg);
+        }
+
+        .antique-border {
+            position: absolute;
+            pointer-events: none;
+        }
+
+        .border-tl {
+            top: 0;
+            left: 0;
+            width: 50px;
+            height: 50px;
+            border-top: 3px solid #8B4513;
+            border-left: 3px solid #8B4513;
+        }
+
+        .border-tr {
+            top: 0;
+            right: 0;
+            width: 50px;
+            height: 50px;
+            border-top: 3px solid #8B4513;
+            border-right: 3px solid #8B4513;
+        }
+
+        .border-bl {
+            bottom: 0;
+            left: 0;
+            width: 50px;
+            height: 50px;
+            border-bottom: 3px solid #8B4513;
+            border-left: 3px solid #8B4513;
+        }
+
+        .border-br {
+            bottom: 0;
+            right: 0;
+            width: 50px;
+            height: 50px;
+            border-bottom: 3px solid #8B4513;
+            border-right: 3px solid #8B4513;
+        }
+
+        @media (max-width: 600px) {
+            .parchment {
+                padding: 30px 20px;
+            }
+            
+            .header h1 {
+                font-size: 2rem;
+            }
+            
+            input, select {
+                padding: 10px 12px;
+            }
+        }
+    </style>
 </head>
 <body>
- <div class="content">
-   <center>
-<form method="post" name="form" id="form">
-    
- <h1>Registration Form</h1>
- <p style="font-size: 10px;">Muhammad Gulab</p>
+    <div class="content">
+        <div class="antique-border border-tl"></div>
+        <div class="antique-border border-tr"></div>
+        <div class="antique-border border-bl"></div>
+        <div class="antique-border border-br"></div>
+        
+        <div class="wax-seal">
+            <span>ACADEMY<br>RECORDS</span>
+        </div>
+        
+        <div class="parchment">
+            <div class="header">
+                <h1>Registration Form</h1>
+                <p>Muhammad Gulab</p>
+            </div>
+            
+            <form method="post" name="form" id="form">
+                <div class="form-group">
+                    <label for="fullname">Full Name</label>
+                    <input type="text" id="fullname" name="Full Name" placeholder="Enter Your Full Name" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="rollnumber">Roll Number</label>
+                    <input type="tel" id="rollnumber" name="Roll Number" placeholder="Enter Your Roll Number" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="class">Class / Grade</label>
+                    <select id="class" name="Class / Grade" required>
+                        <option value="">--Select--</option>
+                        <option>6th</option>
+                        <option>7th</option>
+                        <option>8th</option>
+                        <option>9th</option>
+                        <option>10th</option>
+                        <option>11th</option>
+                        <option>12th</option>
+                        <option>Graduation</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label for="subject">Test Subject</label>
+                    <select id="subject" name="Test Subject" required>
+                        <option value="">--Select--</option>
+                        <option>Mathematics</option>
+                        <option>Science</option>
+                        <option>English</option>
+                        <option>Computer</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label for="email">Email Address</label>
+                    <input type="email" id="email" name="Email Address" placeholder="Enter Your Email Address" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="phone">Phone Number</label>
+                    <input type="tel" id="phone" name="Phone Number" placeholder="Enter Your Phone Number" pattern="[0-9]{11}" required>
+                </div>
+                
+                <button type="submit" class="click">Submit <i class="fas fa-quill"></i></button>
+                
+                <div class="footer">
+                    <p>Muhammad Gulab</p>
+                </div>
+            </form>
+        </div>
+    </div>
 
- <label>Full Name</label>
- <input type="text" name="Full Name" placeholder="Enter Your Full Name" required>
+    <script>
+        const scriptURL = "https://script.google.com/macros/s/AKfycbzWLduz03t3d8fW3dNV0wPjST_gNDlQK-Hp6sNfMAvnvudu7_f07PiGujws8XiEFSs1gg/exec";
+        const form = document.forms['form'];
+        const submitBtn = document.querySelector(".click");
 
- <label>Roll Number</label>
- <input type="tel" name="Roll Number" placeholder="Enter Your Roll Number" required>
+        form.addEventListener('submit', e => {
+            e.preventDefault();
 
- <label>Class / Grade</label>
- <select class="ad" name="Class / Grade" required>
-   <option value="">--Select--</option>
-   <option>6th</option>
-   <option>7th</option>
-   <option>8th</option>
-   <option>9th</option>
-   <option>10th</option>
-   <option>11th</option>
-   <option>12th</option>
-   <option>Graduation</option>
- </select>
+            // Show instant feedback
+            submitBtn.disabled = true;
+            submitBtn.innerHTML = "Submitting <i class='fas fa-spinner fa-spin'></i>";
 
- <label>Test Subject</label>
- <select class="ad" name="Test Subject" required>
-   <option value="">--Select--</option>
-   <option>Mathematics</option>
-   <option>Science</option>
-   <option>English</option>
-   <option>Computer</option>
- </select>
-
- <label>Email Address</label>
- <input type="email" name="Email Address" placeholder="Enter Your Email Address" required>
-
- <label>Phone Number</label>
- <input type="tel" name="Phone Number" placeholder="Enter Your Phone Number" pattern="[0-9]{11}" required>
-
- <button type="submit" class="click">Submit &#10132</button>
-
- <p style="font-size: 10px; color: rgb(33, 33, 33); margin: 6px;">Muhammad Gulab</p>
-</form>
-</center>
-</div>
-
-<script>
-const scriptURL = "https://script.google.com/macros/s/AKfycbzWLduz03t3d8fW3dNV0wPjST_gNDlQK-Hp6sNfMAvnvudu7_f07PiGujws8XiEFSs1gg/exec"; // replace with your deployed script URL
-const form = document.forms['form'];
-const submitBtn = document.querySelector(".click");
-
-form.addEventListener('submit', e => {
-  e.preventDefault();
-
-  // Show instant feedback
-  submitBtn.disabled = true;
-  submitBtn.innerText = "Submitting...";
-
-  fetch(scriptURL, { method: 'POST', body: new FormData(form)})
-    .then(response => {
-       alert("Thank you! Your form is submitted successfully.");
-       form.reset(); // clear form instantly
-    })
-    .catch(error => {
-       alert("Error! Something went wrong.");
-       console.error('Error!', error.message);
-    })
-    .finally(() => {
-       submitBtn.disabled = false;
-       submitBtn.innerText = "Submit ➝";
-    });
-});
-</script>     
+            fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+                .then(response => {
+                    alert("Thank you! Your form is submitted successfully.");
+                    form.reset(); // clear form instantly
+                })
+                .catch(error => {
+                    alert("Error! Something went wrong.");
+                    console.error('Error!', error.message);
+                })
+                .finally(() => {
+                    submitBtn.disabled = false;
+                    submitBtn.innerHTML = "Submit <i class='fas fa-quill'></i>";
+                });
+        });
+    </script>     
 </body>
 </html>
