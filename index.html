@@ -2,12 +2,12 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>Antique Registration Form</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Cormorant+Garamond:wght@400;600&display=swap" rel="stylesheet">
     <style>
-        * {
+         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
@@ -17,7 +17,7 @@
             background: #8B4513 url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><rect fill="%23693f15" width="100" height="100"/><path fill="%23a57c4a" opacity="0.2" d="M0 0h100v100H0z"/></svg>');
             font-family: 'Cormorant Garamond', serif;
             color: #3E2723;
-            display: flex;
+            
             justify-content: center;
             align-items: center;
             min-height: 100vh;
@@ -26,8 +26,8 @@
 
         .content {
             position: relative;
-            max-width: 500px;
-            width: 100%;
+            max-width: 800px;
+            width: 100%;            
         }
 
         .parchment {
@@ -58,7 +58,7 @@
             position: relative;
         }
 
-        .header h1 {
+       .header h1 {
             font-family: 'Cinzel', serif;
             font-size: 2.5rem;
             color: #5D4037;
@@ -235,104 +235,119 @@
     </style>
 </head>
 <body>
-    <div class="content">
-        <div class="antique-border border-tl"></div>
-        <div class="antique-border border-tr"></div>
-        <div class="antique-border border-bl"></div>
-        <div class="antique-border border-br"></div>
+ <div class="content">
+  <div class="antique-border border-tl"></div>
+  <div class="antique-border border-tr"></div>
+  <div class="antique-border border-bl"></div>
+  <div class="antique-border border-br"></div>
         
-        <div class="wax-seal">
-            <span>ACADEMY<br>RECORDS</span>
-        </div>
+ <div class="wax-seal">
+  <span>ACADEMY<br>RECORDS</span>
+ </div>
         
-        <div class="parchment">
-            <div class="header">
-                <h1>Registration Form</h1>
-                <p>Muhammad Gulab</p>
-            </div>
+ <div class="parchment">
+ <div class="header">
+  <h1>REGISTRATION FORM</h1>
+  <p>Muhammad Gulab</p>
+ </div>
             
-            <form method="post" name="form" id="form">
-                <div class="form-group">
-                    <label for="fullname">Full Name</label>
-                    <input type="text" id="fullname" name="Full Name" placeholder="Enter Your Full Name" required>
-                </div>
+ <form method="post" name="form" id="form">
+ <div class="form-group">
+  <label for="fullname">Full Name</label>
+  <input type="text" id="fullname" name="Full Name" placeholder="Enter Your Full Name">
+ </div>
                 
-                <div class="form-group">
-                    <label for="rollnumber">Roll Number</label>
-                    <input type="tel" id="rollnumber" name="Roll Number" placeholder="Enter Your Roll Number" required>
-                </div>
+ <div class="form-group">
+  <label for="gender">Gender</label>                
+  <select id="class" name="Gender">
+    <option value="">--Select--</option>
+    <option>Male</option>
+    <option>Female</option>
+  </select>
+ </div>
                 
-                <div class="form-group">
-                    <label for="class">Class / Grade</label>
-                    <select id="class" name="Class / Grade" required>
-                        <option value="">--Select--</option>
-                        <option>6th</option>
-                        <option>7th</option>
-                        <option>8th</option>
-                        <option>9th</option>
-                        <option>10th</option>
-                        <option>11th</option>
-                        <option>12th</option>
-                        <option>Graduation</option>
-                    </select>
-                </div>
+ <div class="form-group">
+  <label for="class">Class / Grade</label>
+ <select id="class" name="Class / Grade">
+   <option value="">--Select--</option>
+    <option>6th</option>
+    <option>7th</option>
+    <option>8th</option>
+    <option>9th</option>
+    <option>10th</option>
+    <option>11th</option>
+    <option>12th</option>
+    <option>Graduation</option>
+  </select>
+  </div>
                 
-                <div class="form-group">
-                    <label for="subject">Test Subject</label>
-                    <select id="subject" name="Test Subject" required>
-                        <option value="">--Select--</option>
-                        <option>Mathematics</option>
-                        <option>Science</option>
-                        <option>English</option>
-                        <option>Computer</option>
-                    </select>
-                </div>
+  <div class="form-group">
+ <label for="subject">Test Subject</label>
+ <select id="subject" name="Test Subject">
+   <option value="">--Select--</option>                       
+   <option>Mathematics</option>
+   <option>Science</option>
+   <option>English</option>
+   <option>Computer</option>
+ </select>
+ </div>
                 
-                <div class="form-group">
-                    <label for="email">Email Address</label>
-                    <input type="email" id="email" name="Email Address" placeholder="Enter Your Email Address" required>
-                </div>
+ <div class="form-group">
+ <label for="email">Enamel</label>
+ <input type="email" id="email" name="Email Address" placeholder="Enter Email Address">
+ </div>
                 
-                <div class="form-group">
-                    <label for="phone">Phone Number</label>
-                    <input type="tel" id="phone" name="Phone Number" placeholder="Enter Your Phone Number" pattern="[0-9]{11}" required>
-                </div>
+ <div class="form-group">
+ <label for="phone">Phone Number</label>
+ <input type="tel" id="phone" name="Phone Number" placeholder="03xx-xxxxxxx" pattern="[0-9]{11}">
+ </div>
                 
-                <button type="submit" class="click">Submit <i class="fas fa-quill"></i></button>
+ <button type="submit" class="click">Submit <i class="fas fa-quill"></i></button>
                 
-                <div class="footer">
-                    <p>Muhammad Gulab</p>
-                </div>
-            </form>
-        </div>
-    </div>
+ <div class="footer">
+   <p>Muhammad Gulab</p>
+ </div>
+</form>
+</div>
+</div>
 
     <script>
-        const scriptURL = "https://script.google.com/macros/s/AKfycbzWLduz03t3d8fW3dNV0wPjST_gNDlQK-Hp6sNfMAvnvudu7_f07PiGujws8XiEFSs1gg/exec";
-        const form = document.forms['form'];
-        const submitBtn = document.querySelector(".click");
+                const scriptURL = "https://script.google.com/macros/s/AKfycbzWLduz03t3d8fW3dNV0wPjST_gNDlQK-Hp6sNfMAvnvudu7_f07PiGujws8XiEFSs1gg/exec";
+const form = document.forms['form'];
+const submitBtn = document.querySelector(".click");
 
-        form.addEventListener('submit', e => {
-            e.preventDefault();
+form.addEventListener('submit', e => {
+    e.preventDefault();
 
-            // Show instant feedback
-            submitBtn.disabled = true;
-            submitBtn.innerHTML = "Submitting <i class='fas fa-spinner fa-spin'></i>";
+    // ---- STATE 2: SUBMITTING ---
+    submitBtn.disabled = true;
+    submitBtn.innerHTML = "Submitting <i class='fas fa-spinner fa-spin'></i>";
 
-            fetch(scriptURL, { method: 'POST', body: new FormData(form)})
-                .then(response => {
-                    alert("Thank you! Your form is submitted successfully.");
-                    form.reset(); // clear form instantly
-                })
-                .catch(error => {
-                    alert("Error! Something went wrong.");
-                    console.error('Error!', error.message);
-                })
-                .finally(() => {
-                    submitBtn.disabled = false;
-                    submitBtn.innerHTML = "Submit <i class='fas fa-quill'></i>";
-                });
+    fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+        .then(response => {
+
+   // ---- STATE 3: SUBMITTED ----
+            submitBtn.innerHTML = "Submitted <i class='fas fa-check'></i>";
+            form.reset();
+
+   // Keep “Submitted” for 2 seconds then go back to normal
+            setTimeout(() => {
+                submitBtn.disabled = false;
+
+   // ---- STATE 1: NORMAL (RESET) ----
+                submitBtn.innerHTML = "Submit <i class='fas fa-quill'></i>";
+            }, 3000);
+
+        })
+        .catch(error => {
+            alert("Error! Something went wrong.");
+            console.error('Error!', error.message);
+
+            // Reset button on error
+            submitBtn.disabled = false;
+            submitBtn.innerHTML = "Submit <i class='fas fa-quill'></i>";
         });
+});
     </script>     
 </body>
 </html>
