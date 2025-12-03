@@ -254,12 +254,12 @@
  <form method="post" name="form" id="form">
  <div class="form-group">
   <label for="fullname">Full Name</label>
-  <input type="text" id="fullname" name="Full Name" placeholder="Enter Your Full Name">
+  <input type="text" id="fullname" name="Full Name" placeholder="Enter Your Full Name" required>
  </div>
                 
  <div class="form-group">
   <label for="gender">Gender</label>                
-  <select id="class" name="Gender">
+  <select id="class" name="Gender" required>
     <option value="">--Select--</option>
     <option>Male</option>
     <option>Female</option>
@@ -268,7 +268,7 @@
                 
  <div class="form-group">
   <label for="class">Class / Grade</label>
- <select id="class" name="Class / Grade">
+ <select id="class" name="Class / Grade" required>
    <option value="">--Select--</option>
     <option>6th</option>
     <option>7th</option>
@@ -283,23 +283,23 @@
                 
   <div class="form-group">
  <label for="subject">Test Subject</label>
- <select id="subject" name="Test Subject">
+ <select id="subject" name="Test Subject" required>
    <option value="">--Select--</option>                       
-   <option>Mathematics</option>
-   <option>Science</option>
    <option>English</option>
-   <option>Computer</option>
+   <option>Science</option>
+   <option>Mathematics</option>
+   <option>General Knowledge</option>
  </select>
  </div>
                 
  <div class="form-group">
- <label for="email">Enamel</label>
- <input type="email" id="email" name="Email Address" placeholder="Enter Email Address">
+ <label for="email">Email Address</label>
+ <input type="email" id="email" name="Email Address" placeholder="Enter Email Address" required>
  </div>
                 
  <div class="form-group">
  <label for="phone">Phone Number</label>
- <input type="tel" id="phone" name="Phone Number" placeholder="03xx-xxxxxxx" pattern="[0-9]{11}">
+ <input type="tel" id="phone" name="Phone Number" placeholder="03xx-xxxxxxx" pattern="[0-9]{11}" required>
  </div>
                 
  <button type="submit" class="click">Submit <i class="fas fa-quill"></i></button>
